@@ -2,6 +2,7 @@ package com.example.firstapp;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,12 +39,22 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         userName + pass,LENGTH_SHORT).show();
 
+                verifyLogin(userName, pass);
+
 
             }
         });
 
 
 
+
+    }
+
+    private void verifyLogin(String userName, String pass) {
+
+        Intent i = new Intent(MainActivity.this, HomeActivity.class);
+
+        startActivity(i);
 
     }
 }
